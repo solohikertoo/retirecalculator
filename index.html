@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retirement Savings Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="retirescript.js"></script>
+</head>
+<body>
+    <div id="banner">
+    <img src="images/money.png" width=150 height=150 alt="money">
+    <h1>Retirement Savings Planner</h1>
+    <p>Enter your plans for savings and retirement, and find out how long your money will last!</p>
+    </div>
+  
+    <h2><span class="heading2">Enter Your Information:</span></h2>
+    
+    <div id="basic-starting">
+    <h3>Basic Starting Information:</h3>
+    <p><span id="col1a">Current savings for retirement: </span>
+       $<input type="number" id="current-save" min="0" value=0></p>
+    <p><span class="col1">Current age: </span>
+       <span class="col2"><input type="number" id="current-age" min="0" value=0></span>
+       <span class="col1">Maximum age for calculation: </span>
+       <input type="number" id="max-age" min="0" value = 100></p>
+    </div>
+    
+    <div class="tinted" id="inflation">
+    <h3>Inflation:</h3>
+    <p>Generally the increase in wages does not keep up with cost of living, so there are
+    two inflation rates: one for cost of living and one for wages.</p>
+    <p><span class="col1">Cost of Living Inflation Rate (%):</span>
+       <span class="col2"><input type="number" id="cost-inflation" min="0" value = 3.5></span>
+       <span class="col1">Wage Inflation Rate (%):</span>
+       <input type="number" id="wage-inflation" min="0" value = 2.0></p>
+    </div>
+    
+    <div id="invest-return">
+    <h3>Investment returns:</h3>
+    <p>Investment style changes over time, typically being more aggressive when you are younger
+    and more conservative when you are older. So there are two investment return rates: one for 
+    younger and one for older, and an age at which the rate changes from one to the other. </p>
+    <p><span class="col1">Younger Investment Return (%): </span>
+       <span class="col2"><input type="number" id="young-invest-return" min="0" value = 7.0></span>
+       <span class="col1">Older Investment Return (%): </span>
+       <input type="number" id="old-invest-return" min="0" value = 5.0> </p>  
+    <p><span class="col1">Age of investment style change: </span>
+       <input type="number" id="invest-change-age" min="0" value = 60></p>       
+    </div>
+    
+    <div class="tinted">
+    <div id="contrib-intervals">
+    <h3>Planned Yearly Contribution To Retirement Savings (in todays dollars):</h3>
+    <p>The amount you contribute to retirement savings per year will change over time. 
+    You might assume you are making more money at a certain age and will contribute more during those
+    years. Also, there are no contributions after you retire! To make this more general, the yearly 
+    contributions are broken into intervals. Each interval has a starting age, ending age, and 
+    yearly amount of contribution.</p>
+    <p>1) Age at start: <input type="number" id="contrib-start-age1" min="0" value=0>
+             Age at end:  <input type="number" id="contrib-stop-age1" min="0" value=0>
+             Yearly amount: $<input type="number" id="contrib-amount1" min="0" value=0></p>
+    </div>
+    <p><button type = "button" onclick="addContribInterval()">Add a contribution interval</button></p>
+    </div>
+    
+    <div id="expense-intervals">
+    <h3>Planned Yearly Withdrawals From Retirement Savings (in todays dollars):</h3>
+    <p>The amount you withdraw from retirement savings per year will change over time. Typically 
+    there are no withdrawals until afer you retire! To make this more general, the yearly 
+    withdrawals are broken into intervals. Each interval has a starting age, ending age, and 
+    yearly amount of withdrawal.</p>
+    <p>1) Age at start: <input type="number" id="expense-start-age1" min="0" value=0>
+             Age at end:  <input type="number" id="expense-stop-age1" min="0" value=0>
+             Yearly amount: $<input type="number" id="expense-amount1" min="0" value=0></p>
+    </div>
+    <p><button type = "button" onclick="addExpenseInterval()">Add an expense interval</button></p>
+    
+    <div id="calc-section">
+    <p><button type="button" id="calc-button" onclick="getResult()">Calculate</button></p>
+    </div>
+ 
+    <h2><span class="heading2">Results:</span></h2>
+    
+    <div id="results-section">
+    <h3>Summary</h3>
+    <p>Peak savings of $<span class="result" id="peak-saving">0</span> at age 
+    <span class="result" id="peak-age">0</span></p>
+    <p>Money runs out at age: <span class="result" id="runout-age">0</span></p>
+    <img src="images/pot-of-gold.jpg" width=150 height=150 alt="pot-of-gold">
+    </div>
+    
+    <div id="plot-section">
+    <h3>Graph Of Savings Over Time</h3>
+    <canvas id="myCanvas" width="750" height="450" style="border:1px solid #40B0A8;">
+    </canvas>
+    </div>
+</body 
+</html>
+
+</!DOCTYPE>

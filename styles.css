@@ -1,0 +1,68 @@
+ body {
+     font-family: arial;
+ }
+ #banner {
+     height: 150px;
+     background-color: #40B0A8;
+     color: white;
+ }
+ #banner h1 {
+     font-size: 36pt;
+ }
+ #banner p {
+     font-size: 20pt;
+ }
+ #banner img {
+     float: right;
+ }
+.heading2 {
+    background-color: #40B0A8;
+    color: white;
+}    
+.col1 {
+    float: left;
+    width: 250px;
+}
+#col1a {
+    float: left;
+    width: 243px;
+}
+.col2 {
+    float: left;
+    width: 130px;
+}
+.tinted {
+    background-color: #C0FFFF;
+}
+input {
+    width: 70pt;
+}
+#calc-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #C0FFFF;
+}
+#calc-button {
+    margin: 10px;
+    margin-left: 300px;
+    width: 120px;
+    height: 40px;
+    font-size: 16pt;
+    font-style: bold;
+    color: #40B0A8;
+}
+#results-section {
+    float: left;
+    width: 450px;
+    font-size: 14pt;
+    font-style: bold;
+}
+.result {
+    font-family: courier;
+    text-decoration: underline;
+}
+#plot-section {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
